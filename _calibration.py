@@ -2,7 +2,7 @@
 """
 Created on Thu May 26 09:26:40 2016
 
-@author: James Diamond
+@author: Andreas Spielhofer
 """ 
 import numpy as _np
 class CalibrationDummy():
