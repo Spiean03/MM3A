@@ -4,9 +4,6 @@ import sys
 import _defines as d
 
 class NanoControl():
-   # _initialx = 0
-   # _initialy = 0
-
     def __init__(self, port=None):
         print "Now initializing"
         try:
@@ -15,7 +12,7 @@ class NanoControl():
                 self._serial = serial.Serial(d.DEFAULT_SERIAL, d.DEFAULT_BAUDRATE, parity = 'N', stopbits = 1, timeout=0.1)
                 print self._serial.name
             else:
-                print "tried"
+                print "Tried"
                 self._serial = serial.Serial(port = 'COM20', baudrate = 115200, parity = 'N', stopbits = 1, timeout = 0.1)
         except:
             self._serial.close()
@@ -27,12 +24,10 @@ class NanoControl():
         print('NanoControl initialized on port %s' %self._serial.name)
         self._serial.write('version\r')
         print('Firmware Version: ' + self._read_return_status())
-        #self._initialx, self._initialy = self._counterread()
         self._serial.write('speed ?\r')
         self._serial.readline()
 
     def _read_return_status(self):
-        #buf = self._serial.readline()
         buf = self._serial.read(512)
         buf = buf.split("\t")
         if buf[0] == 'e':
@@ -204,77 +199,3 @@ class NanoControl():
         self._relax()
         time.sleep(0.2)
         return self._counterreset()
-
-
-
-class NanoControl_Dummy(object):
-    _x = 0
-    _y = 0
-
-    def __init__(self, port=None):
-        pass
-
-    def _read_return_status(self):
-        time.sleep(0.1)
-        return 'o\r'
-
-    def _coarse(self, channel, steps):
-        time.sleep(0.1)
-        return 0
-
-    def _get_coarse_counter(self, channel):
-        time.sleep(0.1)
-        return 0
-        print('test')
-
-    def _coarse_reset(self):
-        time.sleep(0.1)
-        return 0
-
-    def _fine(self, channel, steps):
-        time.sleep(0.1)
-        return 0
-
-    def _get_fine_counter(self):
-        time.sleep(0.1)
-        return 0
-
-    def _relax(self):
-        time.sleep(0.1)
-        return 0
-
-    def _moveabs(self, x=None, y=None, channel=None, pos=None):
-        time.sleep(0.1)
-        return 0
-
-    def _moverel(self, dx=None, dy=None):
-        time.sleep(0.1)
-        return 0
-
-    def _counterread(self):
-        time.sleep(0.1)
-        return (0,0)
-
-    def _counterreset(self):
-        time.sleep(0.1)
-        return 0
-
-    def home(self):
-        time.sleep(0.1)
-        return 0
-
-# Example how to read the Steps in A B C D
-#NanoControl()._counterread()
-# Example how to read the Steps in A B C D
-#NanoControl()._get_coarse_counter()
-#Example how to send 100 Steps to channel A:
-#time.sleep(5)
-#NanoControl()._coarse('A', 100)
-#time.sleep(5)
-#NanoControl()._coarse('A', 100)
-
-#n  = NanoControl()
-#a._get_speed()
-#print(a.speed0)
-
-#print(NanoControl()._counterread())
