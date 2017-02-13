@@ -1,10 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu May 26 09:26:40 2016
+@author:    Andreas Spielhofer
+            Ph.D. Candidate
+            SPM group - http://spm.physics.mcgill.ca/
+            
+            Department of Physics
+            McGill University
+            3600 Rue University
+            Montreal H3A 2T8
+            Canada
+            
+@email:     andreas.spielhofer@mail.mcgill.ca
+"""
 
-@author: Andreas Spielhofer
-""" 
 import numpy as _np
+
 class CalibrationDummy():
     """
     This class is a test function to calibrate the manipulator 
