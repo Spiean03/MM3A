@@ -72,15 +72,3 @@ class CalibrationDummy():
         #print r
         print 'Configured'
         return self.X,self.Y,self.Z
-    
-   
-                
-        
-        
-        
-    
-
-
-                            
-                    
-                
