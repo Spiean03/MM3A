@@ -1,17 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-@author:    Andreas Spielhofer
-            Ph.D. Candidate
-            SPM group - http://spm.physics.mcgill.ca/
-            
-            Department of Physics
-            McGill University
-            3600 Rue University
-            Montreal H3A 2T8
-            Canada
-            
-@email:     andreas.spielhofer@mail.mcgill.ca
-"""
 
 import math
 
